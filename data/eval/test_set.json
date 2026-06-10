@@ -1,0 +1,218 @@
+[
+  {
+    "id": "q01_summary",
+    "question_type": "summary",
+    "question": "What is the main summary of 'A Hybrid CNN\u2013YOLOv8 Model for Forgery Detection in Brain DICOM Images'?",
+    "ground_truth": "Abstract Although brain DICOM pictures are crucial for medical diagnosis and treatment planning, they are susceptible to image alteration and fraud, which can result in poor medical decisions.",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-9980260/v1"
+    ]
+  },
+  {
+    "id": "q01_authors",
+    "question_type": "authors",
+    "question": "Who authored 'A Hybrid CNN\u2013YOLOv8 Model for Forgery Detection in Brain DICOM Images'?",
+    "ground_truth": "HARINI . S",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-9980260/v1"
+    ]
+  },
+  {
+    "id": "q01_date",
+    "question_type": "published_date",
+    "question": "When was 'A Hybrid CNN\u2013YOLOv8 Model for Forgery Detection in Brain DICOM Images' published?",
+    "ground_truth": "2026-06-10",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-9980260/v1"
+    ]
+  },
+  {
+    "id": "q01_categories",
+    "question_type": "categories",
+    "question": "What categories are listed for 'A Hybrid CNN\u2013YOLOv8 Model for Forgery Detection in Brain DICOM Images'?",
+    "ground_truth": "uncategorized",
+    "ground_truth_doc_ids": [
+      "10.21203/rs.3.rs-9980260/v1"
+    ]
+  },
+  {
+    "id": "q02_summary",
+    "question_type": "summary",
+    "question": "What is the main summary of 'Application value of resting-state fMRI in preoperative lateralization of language areas in epilepsy with left-sided epileptogenic foci'?",
+    "ground_truth": "Objective Focusing on patients with epilepsy and left-sided epileptogenic foci, this study aimed to clarify language lateralization differences from healthy individuals, explore Broca\u2019s/Wernicke\u2019s area lateralization and dominant hemisphere shift, and construct a laterality index\u2013activation map combined scheme.",
+    "ground_truth_doc_ids": [
+      "10.3389/fneur.2026.1839830"
+    ]
+  },
+  {
+    "id": "q02_authors",
+    "question_type": "authors",
+    "question": "Who authored 'Application value of resting-state fMRI in preoperative lateralization of language areas in epilepsy with left-sided epileptogenic foci'?",
+    "ground_truth": "Zihao Wang, Tianqi Hu, Meng Wang, Ying Li, Yaning Sun, Di Zhang, Wenling Li",
+    "ground_truth_doc_ids": [
+      "10.3389/fneur.2026.1839830"
+    ]
+  },
+  {
+    "id": "q02_date",
+    "question_type": "published_date",
+    "question": "When was 'Application value of resting-state fMRI in preoperative lateralization of language areas in epilepsy with left-sided epileptogenic foci' published?",
+    "ground_truth": "2026-06-10",
+    "ground_truth_doc_ids": [
+      "10.3389/fneur.2026.1839830"
+    ]
+  },
+  {
+    "id": "q02_categories",
+    "question_type": "categories",
+    "question": "What categories are listed for 'Application value of resting-state fMRI in preoperative lateralization of language areas in epilepsy with left-sided epileptogenic foci'?",
+    "ground_truth": "uncategorized",
+    "ground_truth_doc_ids": [
+      "10.3389/fneur.2026.1839830"
+    ]
+  },
+  {
+    "id": "q03_summary",
+    "question_type": "summary",
+    "question": "What is the main summary of 'Development and evaluation of a machine learning-based risk prediction model for enteral feeding intolerance in sepsis patients'?",
+    "ground_truth": "Background Early detection and prediction of enteral feeding intolerance (EFI) are essential for effective management of septic patients.",
+    "ground_truth_doc_ids": [
+      "10.3389/fnut.2026.1858783"
+    ]
+  },
+  {
+    "id": "q03_authors",
+    "question_type": "authors",
+    "question": "Who authored 'Development and evaluation of a machine learning-based risk prediction model for enteral feeding intolerance in sepsis patients'?",
+    "ground_truth": "Zhengang Wei, Congcong Liu, Jicheng Zhang, Xiaohua Wang",
+    "ground_truth_doc_ids": [
+      "10.3389/fnut.2026.1858783"
+    ]
+  },
+  {
+    "id": "q03_date",
+    "question_type": "published_date",
+    "question": "When was 'Development and evaluation of a machine learning-based risk prediction model for enteral feeding intolerance in sepsis patients' published?",
+    "ground_truth": "2026-06-10",
+    "ground_truth_doc_ids": [
+      "10.3389/fnut.2026.1858783"
+    ]
+  },
+  {
+    "id": "q03_categories",
+    "question_type": "categories",
+    "question": "What categories are listed for 'Development and evaluation of a machine learning-based risk prediction model for enteral feeding intolerance in sepsis patients'?",
+    "ground_truth": "uncategorized",
+    "ground_truth_doc_ids": [
+      "10.3389/fnut.2026.1858783"
+    ]
+  },
+  {
+    "id": "q04_summary",
+    "question_type": "summary",
+    "question": "What is the main summary of 'Formative and summative assessments: English-majored students\u2019 perceptions and expectations'?",
+    "ground_truth": "Assessment is a compulsory and regular activity at all educational levels in Vietnam to measure students\u2019 learning outcomes through their courses.",
+    "ground_truth_doc_ids": [
+      "10.65956/ltlt.2026.57"
+    ]
+  },
+  {
+    "id": "q04_authors",
+    "question_type": "authors",
+    "question": "Who authored 'Formative and summative assessments: English-majored students\u2019 perceptions and expectations'?",
+    "ground_truth": "Boi Ngoc Trinh, Ngoc Thi Mong Trinh",
+    "ground_truth_doc_ids": [
+      "10.65956/ltlt.2026.57"
+    ]
+  },
+  {
+    "id": "q04_date",
+    "question_type": "published_date",
+    "question": "When was 'Formative and summative assessments: English-majored students\u2019 perceptions and expectations' published?",
+    "ground_truth": "2026-06-10",
+    "ground_truth_doc_ids": [
+      "10.65956/ltlt.2026.57"
+    ]
+  },
+  {
+    "id": "q04_categories",
+    "question_type": "categories",
+    "question": "What categories are listed for 'Formative and summative assessments: English-majored students\u2019 perceptions and expectations'?",
+    "ground_truth": "uncategorized",
+    "ground_truth_doc_ids": [
+      "10.65956/ltlt.2026.57"
+    ]
+  },
+  {
+    "id": "q05_summary",
+    "question_type": "summary",
+    "question": "What is the main summary of 'Functional model for amelogenesis: polarization and pH sensitivity of calcium uptake in ameloblast-derived HAT-7 cells'?",
+    "ground_truth": "Abstract Enamel mineralization requires calcium (Ca 2+ ) entering the matrix through the epithelium.",
+    "ground_truth_doc_ids": [
+      "10.1007/s00223-026-01559-x"
+    ]
+  },
+  {
+    "id": "q05_authors",
+    "question_type": "authors",
+    "question": "Who authored 'Functional model for amelogenesis: polarization and pH sensitivity of calcium uptake in ameloblast-derived HAT-7 cells'?",
+    "ground_truth": "Krist\u00f3f K\u00e1d\u00e1r, Anna F\u00f6ldes, R\u00f3bert R\u00e1cz, Susan Van-Weert, \u00c1d\u00e1m So\u00f3s, Jason Bruce, Martin C. Steward, Pamela DenBesten, G\u00e1bor Varga, \u00c1kos Zsembery",
+    "ground_truth_doc_ids": [
+      "10.1007/s00223-026-01559-x"
+    ]
+  },
+  {
+    "id": "q05_date",
+    "question_type": "published_date",
+    "question": "When was 'Functional model for amelogenesis: polarization and pH sensitivity of calcium uptake in ameloblast-derived HAT-7 cells' published?",
+    "ground_truth": "2026-06-10",
+    "ground_truth_doc_ids": [
+      "10.1007/s00223-026-01559-x"
+    ]
+  },
+  {
+    "id": "q05_categories",
+    "question_type": "categories",
+    "question": "What categories are listed for 'Functional model for amelogenesis: polarization and pH sensitivity of calcium uptake in ameloblast-derived HAT-7 cells'?",
+    "ground_truth": "uncategorized",
+    "ground_truth_doc_ids": [
+      "10.1007/s00223-026-01559-x"
+    ]
+  },
+  {
+    "id": "q06_summary",
+    "question_type": "summary",
+    "question": "What is the main summary of 'Intelligent prediction model for geoeffectiveness of coronal mass ejections'?",
+    "ground_truth": "Predicting the geoeffectiveness of coronal mass ejections (CMEs) is a core issue in operational space weather forecasting.",
+    "ground_truth_doc_ids": [
+      "10.3389/fspas.2026.1839173"
+    ]
+  },
+  {
+    "id": "q06_authors",
+    "question_type": "authors",
+    "question": "Who authored 'Intelligent prediction model for geoeffectiveness of coronal mass ejections'?",
+    "ground_truth": "Xin Tang, Xiaohua Yang, Long Xu, Xin Huang",
+    "ground_truth_doc_ids": [
+      "10.3389/fspas.2026.1839173"
+    ]
+  },
+  {
+    "id": "q06_date",
+    "question_type": "published_date",
+    "question": "When was 'Intelligent prediction model for geoeffectiveness of coronal mass ejections' published?",
+    "ground_truth": "2026-06-10",
+    "ground_truth_doc_ids": [
+      "10.3389/fspas.2026.1839173"
+    ]
+  },
+  {
+    "id": "q06_categories",
+    "question_type": "categories",
+    "question": "What categories are listed for 'Intelligent prediction model for geoeffectiveness of coronal mass ejections'?",
+    "ground_truth": "uncategorized",
+    "ground_truth_doc_ids": [
+      "10.3389/fspas.2026.1839173"
+    ]
+  }
+]

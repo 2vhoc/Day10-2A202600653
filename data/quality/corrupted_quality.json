@@ -1,0 +1,65 @@
+{
+  "report_name": "corrupted",
+  "row_count": 24,
+  "passed": false,
+  "failed_checks": [
+    "paper_id_unique",
+    "summary_not_blank",
+    "summary_min_length",
+    "freshness_threshold"
+  ],
+  "checks": [
+    {
+      "name": "row_count_minimum",
+      "passed": true,
+      "details": {
+        "row_count": 24,
+        "minimum": 8
+      }
+    },
+    {
+      "name": "paper_id_not_null",
+      "passed": true,
+      "details": {
+        "null_count": 0
+      }
+    },
+    {
+      "name": "paper_id_unique",
+      "passed": false,
+      "details": {
+        "duplicate_count": 2
+      }
+    },
+    {
+      "name": "title_not_blank",
+      "passed": true,
+      "details": {
+        "blank_count": 0
+      }
+    },
+    {
+      "name": "summary_not_blank",
+      "passed": false,
+      "details": {
+        "blank_count": 2
+      }
+    },
+    {
+      "name": "summary_min_length",
+      "passed": false,
+      "details": {
+        "too_short_count": 2,
+        "minimum_chars": 40
+      }
+    },
+    {
+      "name": "freshness_threshold",
+      "passed": false,
+      "details": {
+        "stale_count": 3,
+        "threshold_days": 180
+      }
+    }
+  ]
+}

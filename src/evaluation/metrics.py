@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
+import json
 from statistics import mean
 import os
+import re
 import sys
 import types
 from typing import Any
@@ -58,16 +60,65 @@ Return:
 - correct = true only when the answer is materially correct
 - short reasoning
 """.strip()
+    structured_error: Exception | None = None
     try:
         llm = build_llm(settings=settings, temperature=0.0).with_structured_output(JudgeVerdict)
         return llm.invoke(prompt)
-    except Exception:
+    except Exception as exc:
+        structured_error = exc
+
+    try:
+        llm = build_llm(settings=settings, temperature=0.0)
+        response = llm.invoke(
+            prompt
+            + "\n\nReturn only compact JSON with keys: score, correct, reasoning. "
+            + "Do not wrap the JSON in markdown."
+        )
+        parsed = _parse_judge_response(getattr(response, "content", str(response)))
+        if parsed:
+            return parsed
+    except Exception as exc:
+        structured_error = exc if structured_error is None else structured_error
+
+    if structured_error is not None:
         score = 5 if _token_f1(reference, prediction) >= 0.95 else 3 if _token_f1(reference, prediction) >= 0.5 else 1
         return JudgeVerdict(
             score=score,
             correct=score >= 3,
-            reasoning="Fallback heuristic judge used because the LLM evaluator was unavailable.",
+            reasoning=(
+                "Fallback heuristic judge used because the LLM evaluator was unavailable: "
+                f"{type(structured_error).__name__}: {str(structured_error)[:240]}"
+            ),
         )
+    raise RuntimeError("Judge evaluation failed without an exception.")
+
+
+def _parse_judge_response(content: Any) -> JudgeVerdict | None:
+    if isinstance(content, list):
+        text = " ".join(str(item.get("text", item)) if isinstance(item, dict) else str(item) for item in content)
+    else:
+        text = str(content)
+    text = text.strip()
+    match = re.search(r"\{.*\}", text, flags=re.DOTALL)
+    if match:
+        text = match.group(0)
+    try:
+        payload = json.loads(text)
+    except json.JSONDecodeError:
+        return None
+    try:
+        score = int(payload.get("score", 1))
+    except (TypeError, ValueError):
+        score = 1
+    score = max(1, min(5, score))
+    correct = payload.get("correct", score >= 3)
+    if isinstance(correct, str):
+        correct = correct.strip().lower() in {"true", "yes", "1", "correct"}
+    return JudgeVerdict(
+        score=score,
+        correct=bool(correct),
+        reasoning=str(payload.get("reasoning", "Plain JSON LLM judge response.")),
+    )
 
 
 def _run_ragas(settings: Settings, answers: list[dict[str, Any]]) -> dict[str, Any]:
@@ -130,12 +181,23 @@ def evaluate_pipeline(
             }
         )
 
+    fallback_judges = sum(
+        "Fallback heuristic judge used" in item["judge"].get("reasoning", "") for item in answers
+    )
+    judge_mode = "llm"
+    if fallback_judges == len(answers):
+        judge_mode = "fallback_heuristic"
+    elif fallback_judges:
+        judge_mode = "mixed"
+
     summary = {
         "samples": len(answers),
         "retrieval_hit_rate": mean(1.0 if item["retrieval_hit"] else 0.0 for item in answers),
         "mean_token_f1": mean(item["token_f1"] for item in answers),
         "judge_accuracy": mean(1.0 if item["judge"]["correct"] else 0.0 for item in answers),
         "mean_judge_score": mean(item["judge"]["score"] for item in answers),
+        "judge_mode": judge_mode,
+        "llm_judge_fallback_count": fallback_judges,
     }
     summary["ragas"] = _run_ragas(settings, answers)
 

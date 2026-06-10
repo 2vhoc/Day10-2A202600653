@@ -71,7 +71,8 @@ def load_settings(project_dir: Path | None = None) -> Settings:
     root = (project_dir or Path(__file__).resolve().parents[2]).resolve()
     workspace = root.parent
     freshness_threshold_days = 180
-    source_from_date = (datetime.now(UTC).date() - timedelta(days=freshness_threshold_days)).isoformat()
+    source_today = datetime.now(UTC).date()
+    source_from_date = (source_today - timedelta(days=freshness_threshold_days)).isoformat()
 
     load_dotenv(workspace / ".env")
     load_dotenv(root / ".env", override=False)
@@ -108,8 +109,14 @@ def load_settings(project_dir: Path | None = None) -> Settings:
         comparison_report=data_dir / "reports" / "corruption_report.md",
     )
 
+    custom_llm_base_url = os.getenv("CUSTOM_LLM_BASE_URL") or os.getenv("LLM_URL")
+    custom_llm_api_key = os.getenv("CUSTOM_LLM_API_KEY") or os.getenv("LLM_KEY")
+    llm_provider = os.getenv("LLM_PROVIDER", "gemini")
+    if os.getenv("LLM_URL") and os.getenv("LLM_KEY"):
+        llm_provider = "custom"
+
     return Settings(
-        llm_provider=os.getenv("LLM_PROVIDER", "gemini"),
+        llm_provider=llm_provider,
         model_name=os.getenv("LLM_MODEL", "gemini-2.5-flash"),
         google_api_key=os.getenv("GOOGLE_API_KEY"),
         openai_api_key=os.getenv("OPENAI_API_KEY"),
@@ -117,15 +124,15 @@ def load_settings(project_dir: Path | None = None) -> Settings:
         openrouter_api_key=os.getenv("OPENROUTER_API_KEY"),
         openrouter_base_url=os.getenv("OPENROUTER_BASE_URL", "https://openrouter.ai/api/v1"),
         ollama_base_url=os.getenv("OLLAMA_BASE_URL", "http://localhost:11434"),
-        custom_llm_api_key=os.getenv("CUSTOM_LLM_API_KEY"),
-        custom_llm_base_url=os.getenv("CUSTOM_LLM_BASE_URL"),
+        custom_llm_api_key=custom_llm_api_key,
+        custom_llm_base_url=custom_llm_base_url,
         embedding_model="sentence-transformers/all-MiniLM-L6-v2",
         baseline_collection_name="papers-baseline",
         corrupted_collection_name="papers-corrupted",
         repaired_collection_name="papers-repaired",
         source_api="Crossref REST API",
         source_query="agentic retrieval augmented generation large language model",
-        source_filter=f"from-pub-date:{source_from_date},has-abstract:true",
+        source_filter=f"from-pub-date:{source_from_date},until-pub-date:{source_today.isoformat()},has-abstract:true",
         max_results=24,
         top_k=4,
         freshness_threshold_days=freshness_threshold_days,

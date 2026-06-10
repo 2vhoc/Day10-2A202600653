@@ -1,0 +1,32 @@
+[
+  {
+    "question": "What is the main summary of 'A Hybrid CNN\u2013YOLOv8 Model for Forgery Detection in Brain DICOM Images'?",
+    "answer": "Abstract Although brain DICOM pictures are crucial for medical diagnosis and treatment planning, they are susceptible to image alteration and fraud, which can result in poor medical decisions.",
+    "retrieved_doc_ids": [
+      "10.21203/rs.3.rs-9980260/v1",
+      "10.3389/fmed.2026.1803921",
+      "10.1162/nol.a.264",
+      "10.3389/fneur.2026.1839830"
+    ]
+  },
+  {
+    "question": "Who authored 'A Hybrid CNN\u2013YOLOv8 Model for Forgery Detection in Brain DICOM Images'?",
+    "answer": "HARINI . S",
+    "retrieved_doc_ids": [
+      "10.21203/rs.3.rs-9980260/v1",
+      "10.1162/nol.a.264",
+      "10.3389/fmed.2026.1803921",
+      "10.3389/fspas.2026.1839173"
+    ]
+  },
+  {
+    "question": "When was 'A Hybrid CNN\u2013YOLOv8 Model for Forgery Detection in Brain DICOM Images' published?",
+    "answer": "2026-06-10",
+    "retrieved_doc_ids": [
+      "10.21203/rs.3.rs-9980260/v1",
+      "10.3389/fmed.2026.1803921",
+      "10.1162/nol.a.264",
+      "10.3389/fneur.2026.1839830"
+    ]
+  }
+]
